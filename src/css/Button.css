@@ -1,0 +1,37 @@
+.btn-all {
+  margin-left: 20px;
+  margin-right: 10px;
+  font-family: "Kanit", sans-serif;
+  font-size: 20px;
+  width: 70px;
+}
+.btn-food {
+  margin-right: 10px;
+  font-family: "Kanit", sans-serif;
+  font-size: 20px;
+  width: 70px;
+}
+.btn-dessert {
+  margin-right: 10px;
+  font-family: "Kanit", sans-serif;
+  font-size: 20px;
+  width: 70px;
+}
+.btn-drink {
+  margin-right: 10px;
+  font-family: "Kanit", sans-serif;
+  font-size: 20px;
+  width: 70px;
+}
+.btn-in-stock {
+  margin-right: 10px;
+  font-family: "Kanit", sans-serif;
+  font-size: 20px;
+  width: 100px;
+}
+.btn-out-of-stock {
+  margin-right: 40px;
+  font-family: "Kanit", sans-serif;
+  font-size: 20px;
+  width: 150px;
+}

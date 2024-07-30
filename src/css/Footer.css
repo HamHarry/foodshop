@@ -1,0 +1,8 @@
+.footer p {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  font-size: 25px;
+  background-color: aqua;
+  text-align: center;
+}

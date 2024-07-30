@@ -1,0 +1,84 @@
+.container {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  height: 90vh;
+  gap: 15px;
+  background-color: aqua;
+}
+/* list-card ============================================== */
+.list-card {
+  background-color: white;
+}
+.search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+.search input {
+  padding: 10px;
+  width: 500px;
+  border-radius: 10px;
+}
+.fa-magnifying-glass {
+  font-size: 25px;
+  margin-right: 5px;
+}
+.wrap-list-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 83vh;
+  overflow: hidden;
+  margin-top: 5px;
+}
+.wrap-list-card:hover {
+  overflow-y: auto;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  border: 5px solid aqua;
+  border-radius: 20px;
+  margin: 10px;
+  background-color: wheat;
+}
+.card img {
+  width: 250px;
+  height: 130px;
+  border-radius: 20px;
+}
+.card-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  text-align: center;
+  font-family: "Kanit", sans-serif;
+}
+.card-text p {
+  font-size: 25px;
+  font-weight: bold;
+}
+.card-text h2 {
+  font-size: 32px;
+}
+.star {
+  display: flex;
+  justify-content: center;
+}
+/* list-pay ============================================== */
+.list-pay {
+  background-color: aqua;
+  display: grid;
+  grid-template-rows: 4fr 1fr;
+  gap: 15px;
+}
+.cart {
+  background-color: white;
+}
+.payment {
+  background-color: white;
+}

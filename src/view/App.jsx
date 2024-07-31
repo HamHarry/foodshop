@@ -53,9 +53,12 @@ function App() {
   const Cart = () => {
     return (
       <div className="wrap-cart">
-        <img src="/src/img/cocktail_10.jpg" alt="name" />
-        <div className="counter">
-          <p>1</p>
+        <div className="cart-name">
+          <img src="/src/img/เค้ก.jpg" alt="name" />
+          <p>Thai tea ice cream</p>
+        </div>
+        <div className="price">
+          <p>60 ฿</p>
         </div>
         <div className="add-item">
           <i className="fa-solid fa-plus"></i>

@@ -32,9 +32,9 @@
 .wrap-list-card {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  height: 750px;
   overflow: hidden;
   margin-top: 10px;
-  cursor: pointer;
 }
 .wrap-list-card:hover {
   overflow-y: auto;
@@ -50,6 +50,7 @@
   border-radius: 20px;
   margin: 10px;
   background-color: wheat;
+  cursor: pointer;
 }
 .card img {
   width: 250px;

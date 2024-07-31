@@ -49,6 +49,23 @@ function App() {
       </div>
     );
   };
+  // แสดงข้อมูลสินค้าในตระกร้า ======================================================
+  const Cart = () => {
+    return (
+      <div className="wrap-cart">
+        <img src="/src/img/cocktail_10.jpg" alt="name" />
+        <div className="counter">
+          <p>1</p>
+        </div>
+        <div className="add-item">
+          <i className="fa-solid fa-plus"></i>
+          <p>1</p>
+          <i className="fa-solid fa-minus"></i>
+        </div>
+      </div>
+    );
+  };
+
   // Search and Button =====================================================
   const ButtonMenu = () => {
     return (
@@ -213,11 +230,18 @@ function App() {
             {SearchBar()}
             {ButtonStock()}
           </div>
-          {WrapListCard()}
+          <div className="card-container">{WrapListCard()}</div>
         </div>
         <div className="list-pay">
-          <div className="cart"></div>
-          <div className="payment"></div>
+          <div className="cart">{Cart()}</div>
+          <div className="payment">
+            <div className="payment-text">
+              <p>Price: 100 ฿</p>
+              <p>VAT 7 %: 7 ฿</p>
+              <p>TOTAL: 107 ฿</p>
+            </div>
+            <i className="fa-solid fa-circle-check"></i>
+          </div>
         </div>
       </div>
       <div className="footer">

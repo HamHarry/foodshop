@@ -29,15 +29,17 @@
   font-size: 25px;
   margin-right: 5px;
 }
+.card-container {
+  height: 750px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.card-container:hover {
+  overflow-y: auto;
+}
 .wrap-list-card {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  height: 750px;
-  overflow: hidden;
-  margin-top: 10px;
-}
-.wrap-list-card:hover {
-  overflow-y: auto;
 }
 .card {
   display: flex;
@@ -107,6 +109,9 @@
   height: 100px;
   border-radius: 10px;
 }
+.wrap-cart img {
+  border-radius: 10px;
+}
 .add-item {
   display: flex;
   align-items: center;
@@ -118,6 +123,7 @@
   display: flex;
   align-items: center;
   font-size: 18px;
+  font-weight: bold;
   font-family: "Kanit", sans-serif;
 }
 .fa-plus {

@@ -4,7 +4,7 @@ const mockup = [
     type: "food",
     name: "Pad Thai",
     score: 5,
-    price: 5.99,
+    price: 1.99,
     img: "/src/img/ผัดไท.png",
   },
   {
@@ -12,7 +12,7 @@ const mockup = [
     type: "food",
     name: "Spaghetti with sausage",
     score: 3,
-    price: 11.99,
+    price: 2.99,
     img: "/src/img/สปาเก็ตตี้.png",
   },
   {
@@ -20,7 +20,7 @@ const mockup = [
     type: "food",
     name: "Fried rice with squid",
     score: 4,
-    price: 11.99,
+    price: 3.99,
     img: "/src/img/กระเพรา.png",
   },
   {
@@ -32,7 +32,7 @@ const mockup = [
     img: "/src/img/ชามะนาว.png",
   },
   {
-    stock: 6,
+    stock: 0,
     type: "drink",
     name: "Cocktail",
     score: 5,
@@ -64,7 +64,7 @@ const mockup = [
     img: "/src/img/มะม่วง.jpg",
   },
   {
-    stock: 7,
+    stock: 0,
     type: "dessert",
     name: "Cream caramel",
     score: 4,

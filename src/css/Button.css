@@ -1,37 +1,110 @@
+/* all ======================== */
 .btn-all {
   margin-left: 20px;
   margin-right: 10px;
   font-family: "Kanit", sans-serif;
   font-size: 20px;
   width: 70px;
+  border-radius: 20px;
+  cursor: pointer;
 }
+.is-btn-all {
+  margin-left: 20px;
+  margin-right: 10px;
+  font-family: "Kanit", sans-serif;
+  font-size: 20px;
+  width: 70px;
+  border-radius: 20px;
+  background-color: aqua;
+  cursor: pointer;
+}
+/* food ======================== */
 .btn-food {
   margin-right: 10px;
   font-family: "Kanit", sans-serif;
   font-size: 20px;
   width: 70px;
+  border-radius: 20px;
+  cursor: pointer;
 }
-.btn-dessert {
+.is-btn-food {
   margin-right: 10px;
   font-family: "Kanit", sans-serif;
   font-size: 20px;
   width: 70px;
+  border-radius: 20px;
+  background-color: aqua;
+  cursor: pointer;
 }
+/* dessert ======================== */
+.btn-dessert {
+  margin-right: 10px;
+  font-family: "Kanit", sans-serif;
+  font-size: 20px;
+  width: 90px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.is-btn-dessert {
+  margin-right: 10px;
+  font-family: "Kanit", sans-serif;
+  font-size: 20px;
+  width: 90px;
+  border-radius: 20px;
+  background-color: aqua;
+  cursor: pointer;
+}
+/* drink ======================== */
 .btn-drink {
   margin-right: 10px;
   font-family: "Kanit", sans-serif;
   font-size: 20px;
   width: 70px;
+  border-radius: 20px;
+  cursor: pointer;
 }
+.is-btn-drink {
+  margin-right: 10px;
+  font-family: "Kanit", sans-serif;
+  font-size: 20px;
+  width: 70px;
+  border-radius: 20px;
+  background-color: aqua;
+  cursor: pointer;
+}
+/* in stock ======================== */
 .btn-in-stock {
   margin-right: 10px;
   font-family: "Kanit", sans-serif;
   font-size: 20px;
   width: 100px;
+  border-radius: 20px;
+  cursor: pointer;
 }
+.is-btn-in-stock {
+  margin-right: 10px;
+  font-family: "Kanit", sans-serif;
+  font-size: 20px;
+  width: 100px;
+  border-radius: 20px;
+  background-color: aqua;
+  cursor: pointer;
+}
+/* out of stock ======================== */
 .btn-out-of-stock {
   margin-right: 40px;
   font-family: "Kanit", sans-serif;
   font-size: 20px;
   width: 150px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.is-btn-out-of-stock {
+  margin-right: 40px;
+  font-family: "Kanit", sans-serif;
+  font-size: 20px;
+  width: 150px;
+  border-radius: 20px;
+  background-color: aqua;
+  cursor: pointer;
 }

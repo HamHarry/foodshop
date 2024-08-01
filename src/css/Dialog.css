@@ -1,0 +1,85 @@
+.dialog-container {
+  position: fixed;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%, 50%);
+  border: 2px solid black;
+  background-color: aqua;
+  border-radius: 20px;
+  height: 700px;
+  width: 500px;
+}
+/* dialog-navbar==============================================================*/
+.dialog-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+.dialog-navbar p {
+  font-size: 20px;
+  font-family: "Kanit", sans-serif;
+}
+.fa-circle-xmark {
+  font-size: 40px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.fa-circle-xmark:hover {
+  color: red;
+}
+/* dialog-check==============================================================*/
+.dialog-check {
+  background-color: white;
+  margin: 10px;
+  border-radius: 5px;
+}
+.dialog-check-list {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  margin-bottom: 10px;
+  overflow-y: auto;
+}
+.dialog-cart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid aqua;
+  margin: 10px;
+  border-radius: 10px;
+  font-family: "Kanit", sans-serif;
+  height: 100px;
+  background-color: wheat;
+  font-weight: bold;
+}
+.dialog-cart p {
+  margin-right: 20px;
+}
+.dialog-cart img {
+  height: 100px;
+  width: 200px;
+  border-radius: 10px;
+}
+/* dialog-check-price==============================================================*/
+.dialog-check-price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 50px;
+  margin: 10px;
+  border-radius: 5px;
+  font-family: "Kanit", sans-serif;
+  font-size: 20px;
+}
+.btn-dialog-pay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fa-money-bill-1 {
+  font-size: 40px;
+  cursor: pointer;
+  padding: 10px;
+}

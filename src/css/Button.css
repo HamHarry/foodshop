@@ -7,6 +7,7 @@
   width: 70px;
   border-radius: 20px;
   cursor: pointer;
+  transition: 0.5s;
 }
 .is-btn-all {
   margin-left: 20px;
@@ -17,6 +18,7 @@
   border-radius: 20px;
   background-color: aqua;
   cursor: pointer;
+  transition: 0.5s;
 }
 /* food ======================== */
 .btn-food {
@@ -26,6 +28,7 @@
   width: 70px;
   border-radius: 20px;
   cursor: pointer;
+  transition: 0.5s;
 }
 .is-btn-food {
   margin-right: 10px;
@@ -35,6 +38,7 @@
   border-radius: 20px;
   background-color: aqua;
   cursor: pointer;
+  transition: 0.5s;
 }
 /* dessert ======================== */
 .btn-dessert {
@@ -44,6 +48,7 @@
   width: 90px;
   border-radius: 20px;
   cursor: pointer;
+  transition: 0.5s;
 }
 .is-btn-dessert {
   margin-right: 10px;
@@ -53,6 +58,7 @@
   border-radius: 20px;
   background-color: aqua;
   cursor: pointer;
+  transition: 0.5s;
 }
 /* drink ======================== */
 .btn-drink {
@@ -62,6 +68,7 @@
   width: 70px;
   border-radius: 20px;
   cursor: pointer;
+  transition: 0.5s;
 }
 .is-btn-drink {
   margin-right: 10px;
@@ -71,6 +78,7 @@
   border-radius: 20px;
   background-color: aqua;
   cursor: pointer;
+  transition: 0.5s;
 }
 /* in stock ======================== */
 .btn-in-stock {
@@ -80,6 +88,7 @@
   width: 100px;
   border-radius: 20px;
   cursor: pointer;
+  transition: 0.5s;
 }
 .is-btn-in-stock {
   margin-right: 10px;
@@ -89,6 +98,7 @@
   border-radius: 20px;
   background-color: aqua;
   cursor: pointer;
+  transition: 0.5s;
 }
 /* out of stock ======================== */
 .btn-out-of-stock {
@@ -98,6 +108,7 @@
   width: 150px;
   border-radius: 20px;
   cursor: pointer;
+  transition: 0.5s;
 }
 .is-btn-out-of-stock {
   margin-right: 40px;
@@ -107,4 +118,5 @@
   border-radius: 20px;
   background-color: aqua;
   cursor: pointer;
+  transition: 0.5s;
 }

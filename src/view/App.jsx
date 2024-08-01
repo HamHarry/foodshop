@@ -2,6 +2,7 @@ import "../css/App.css";
 import "../css/Navbar.css";
 import "../css/Footer.css";
 import "../css/Button.css";
+import "../css/Dialog.css";
 
 import { useState } from "react";
 import mockup from "../Mockup";
@@ -12,6 +13,7 @@ function App() {
   const [selectedType, setSelectedType] = useState("all");
   const [selectedStock, setSelectedStock] = useState("all");
   const [searchValue, setSearchValue] = useState("");
+  const [open, setOpen] = useState(false);
 
   // แสดงข้อมูลสินค้า ======================================================
   const WrapListCard = () => {
@@ -66,6 +68,37 @@ function App() {
           <i className="fa-solid fa-minus"></i>
         </div>
       </div>
+    );
+  };
+  // แสดง Dialog ======================================================
+  const Dialog = () => {
+    return (
+      <dialog open={open}>
+        <div className="dialog-container">
+          <div className="dialog-navbar">
+            <p>รายการสินค้าทั้งหมด</p>
+            <i
+              className="fa-solid fa-circle-xmark"
+              onClick={() => {
+                setOpen(!open);
+              }}
+            ></i>
+          </div>
+          <div className="dialog-check">
+            <div className="dialog-check-list">
+              <div className="dialog-cart">
+                <img src="/src/img/เค้ก.jpg" alt="name" />
+                <p>Thai tea ice cream</p>
+                <p>60 ฿</p>
+              </div>
+            </div>
+          </div>
+          <div className="dialog-check-price">Total: 200 บาท</div>
+          <div className="btn-dialog-pay">
+            <i className="fa-solid fa-money-bill-1"></i>
+          </div>
+        </div>
+      </dialog>
     );
   };
 
@@ -224,7 +257,12 @@ function App() {
             return window.location.reload(false);
           }}
         />
-        <i className="fa-solid fa-basket-shopping"></i>
+        <i
+          className="fa-solid fa-basket-shopping"
+          onClick={() => {
+            setOpen(!open);
+          }}
+        ></i>
       </div>
       <div className="container">
         <div className="list-card">
@@ -247,6 +285,7 @@ function App() {
           </div>
         </div>
       </div>
+      {Dialog()}
       <div className="footer">
         <p>Developer By HamHarry</p>
       </div>

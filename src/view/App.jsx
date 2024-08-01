@@ -14,6 +14,7 @@ function App() {
   const [selectedStock, setSelectedStock] = useState("all");
   const [searchValue, setSearchValue] = useState("");
   const [open, setOpen] = useState(false);
+  const [listCart, setListCart] = useState([]);
 
   // แสดงข้อมูลสินค้า ======================================================
   const WrapListCard = () => {
@@ -22,7 +23,7 @@ function App() {
         {list.map((item, index) => {
           const { name, price, img, score } = item;
           return (
-            <div key={index} className="card">
+            <div key={index} className="card" onClick={() => {}}>
               <img src={img} alt={name} />
               <div className="card-text">
                 <div className="text-name">

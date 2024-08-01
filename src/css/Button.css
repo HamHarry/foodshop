@@ -120,3 +120,104 @@
   cursor: pointer;
   transition: 0.5s;
 }
+/* phone ==================== */
+@media (max-width: 640px) {
+  .btn-all {
+    display: none;
+  }
+  .is-btn-all {
+    display: none;
+  }
+  .btn-food {
+    display: none;
+  }
+  .is-btn-food {
+    display: none;
+  }
+  .btn-dessert {
+    display: none;
+  }
+  .is-btn-dessert {
+    display: none;
+  }
+  .btn-drink {
+    display: none;
+  }
+  .is-btn-drink {
+    display: none;
+  }
+  .btn-in-stock {
+    display: none;
+  }
+  .is-btn-in-stock {
+    display: none;
+  }
+  .btn-out-of-stock {
+    display: none;
+  }
+  .is-btn-out-of-stock {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .btn-all {
+    font-size: 20px;
+    width: 100px;
+    height: 50px;
+  }
+  .is-btn-all {
+    font-size: 20px;
+    width: 100px;
+    height: 50px;
+  }
+  .btn-food {
+    font-size: 20px;
+    width: 125px;
+    height: 50px;
+  }
+  .is-btn-food {
+    font-size: 20px;
+    width: 125px;
+    height: 50px;
+  }
+  .btn-dessert {
+    font-size: 20px;
+    width: 150px;
+    height: 50px;
+  }
+  .is-btn-dessert {
+    font-size: 20px;
+    width: 150px;
+    height: 50px;
+  }
+  .btn-drink {
+    font-size: 20px;
+    width: 125px;
+    height: 50px;
+  }
+  .is-btn-drink {
+    font-size: 20px;
+    width: 125px;
+    height: 50px;
+  }
+  .btn-in-stock {
+    font-size: 20px;
+    width: 160px;
+    height: 50px;
+  }
+  .is-btn-in-stock {
+    font-size: 20px;
+    width: 160px;
+    height: 50px;
+  }
+  .btn-out-of-stock {
+    font-size: 20px;
+    width: 250px;
+    height: 50px;
+  }
+  .is-btn-out-of-stock {
+    font-size: 20px;
+    width: 250px;
+    height: 50px;
+  }
+}

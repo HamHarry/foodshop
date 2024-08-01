@@ -83,3 +83,72 @@
   cursor: pointer;
   padding: 10px;
 }
+/* phone ==================== */
+@media (max-width: 640px) {
+  .dialog-container {
+    height: 250vh;
+    width: 250vw;
+  }
+  .dialog-navbar p {
+    font-size: 50px;
+  }
+  .fa-circle-xmark {
+    font-size: 70px;
+  }
+  .dialog-check-list {
+    height: 180vh;
+  }
+  .dialog-cart {
+    height: 250px;
+    font-size: 35px;
+  }
+  .dialog-cart img {
+    height: 250px;
+    width: 400px;
+    border-radius: 10px;
+  }
+  .dialog-check-price {
+    height: 200px;
+    font-size: 60px;
+  }
+  .fa-money-bill-1 {
+    font-size: 100px;
+    margin-top: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .dialog-container {
+    height: 150vh;
+    width: 200vw;
+  }
+  .dialog-navbar p {
+    font-size: 30px;
+  }
+  .fa-circle-xmark {
+    font-size: 50px;
+  }
+  .dialog-check-list {
+    height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow-y: auto;
+  }
+  .dialog-cart {
+    height: 125px;
+    width: 625px;
+    font-size: 25px;
+  }
+  .dialog-cart img {
+    height: 100px;
+    width: 200px;
+    border-radius: 10px;
+  }
+  .dialog-check-price {
+    height: 80px;
+    font-size: 40px;
+  }
+  .fa-money-bill-1 {
+    font-size: 100px;
+    margin-top: -15px;
+  }
+}

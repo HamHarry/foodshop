@@ -6,3 +6,19 @@
   background-color: aqua;
   text-align: center;
 }
+/* phone ==================== */
+@media (max-width: 640px) {
+  .footer p {
+    width: 400vw;
+    bottom: -300vh;
+    font-size: 60px;
+  }
+}
+/* tablet ============================ */
+@media (max-width: 768px) {
+  .footer p {
+    width: 234vw;
+    bottom: -135vh;
+    font-size: 40px;
+  }
+}

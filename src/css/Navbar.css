@@ -3,13 +3,13 @@
   width: 100vw;
   height: 60px;
   justify-content: space-between;
+  align-items: center;
   background-color: aqua;
 }
 .navbar img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  margin-top: 5px;
   margin-left: 10px;
   cursor: pointer;
 }
@@ -21,4 +21,35 @@
   gap: 10px;
   margin-right: 10px;
   cursor: pointer;
+}
+/* phone ============================ */
+@media (max-width: 640px) {
+  .navbar {
+    width: 400vw;
+    height: 20vh;
+  }
+  .navbar img {
+    width: 100px;
+    height: 100px;
+  }
+  .navbar .fa-basket-shopping {
+    font-size: 90px;
+  }
+}
+/* tablet ============================ */
+@media (max-width: 768px) {
+  .navbar {
+    width: 234vw;
+    height: 22vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navbar img {
+    width: 70px;
+    height: 70px;
+  }
+  .navbar .fa-basket-shopping {
+    font-size: 70px;
+  }
 }

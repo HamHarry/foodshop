@@ -4,7 +4,7 @@
   bottom: 50%;
   transform: translate(-50%, 50%);
   border: 2px solid black;
-  background-color: aqua;
+  background-color: #57bdf6;
   border-radius: 20px;
   height: 700px;
   width: 500px;
@@ -45,12 +45,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid aqua;
+  border: 2px solid #57bdf6;
   margin: 10px;
   border-radius: 10px;
   font-family: "Kanit", sans-serif;
   height: 100px;
-  background-color: wheat;
+  background-color: #ffefd5;
   font-weight: bold;
 }
 .dialog-cart p {

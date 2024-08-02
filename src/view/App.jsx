@@ -33,7 +33,10 @@ function App() {
                 });
                 if (cardID > -1) {
                   const prevlistCarts = listCarts[cardID];
-                  const newItem = { ...item, total: prevlistCarts.total + 1 };
+                  const newItem = {
+                    ...item,
+                    total: prevlistCarts.total + 1,
+                  };
                   const newlistCarts = [...listCarts];
                   newlistCarts.splice(cardID, 1, newItem);
                   setListCarts(newlistCarts);
@@ -44,6 +47,9 @@ function App() {
                 }
               }}
             >
+              <div className="stock">
+                <div className="background-stock">{item.stock}</div>
+              </div>
               <img src={img} alt={name} />
               <div className="card-text">
                 <div className="text-name">

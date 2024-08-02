@@ -41,6 +41,24 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+.stock {
+  position: absolute;
+  display: flex;
+  width: 425px;
+  height: 200px;
+  justify-content: end;
+  font-size: 20px;
+  font-weight: bold;
+}
+.background-stock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
 .card {
   display: flex;
   flex-direction: column;

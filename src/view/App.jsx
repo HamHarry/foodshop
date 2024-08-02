@@ -14,7 +14,7 @@ function App() {
   const [selectedStock, setSelectedStock] = useState("all");
   const [searchValue, setSearchValue] = useState("");
   const [open, setOpen] = useState(false);
-  const [listCart, setListCart] = useState([]);
+  const [listCarts, setListCarts] = useState([]);
 
   // แสดงข้อมูลสินค้า ======================================================
   const WrapListCard = () => {
@@ -23,7 +23,27 @@ function App() {
         {list.map((item, index) => {
           const { name, price, img, score } = item;
           return (
-            <div key={index} className="card" onClick={() => {}}>
+            <div
+              key={index}
+              className="card"
+              onClick={() => {
+                // คลิ๊กแล้วให้สินค้าเข้ามา ถ้ามีสินค้าอยู่แล้วให้ total อัพเดท แต่ถ้ายังไม่มีให้เพิ่มสินค้าใหม่
+                const cardID = listCarts.findIndex((listCart) => {
+                  return listCart.id === item.id;
+                });
+                if (cardID > -1) {
+                  const prevlistCarts = listCarts[cardID];
+                  const newItem = { ...item, total: prevlistCarts.total + 1 };
+                  const newlistCarts = [...listCarts];
+                  newlistCarts.splice(cardID, 1, newItem);
+                  setListCarts(newlistCarts);
+                } else {
+                  const newItem = { ...item, total: 1 };
+                  const newlistCarts = [...listCarts, newItem];
+                  setListCarts(newlistCarts);
+                }
+              }}
+            >
               <img src={img} alt={name} />
               <div className="card-text">
                 <div className="text-name">
@@ -54,23 +74,56 @@ function App() {
   };
   // แสดงข้อมูลสินค้าในตระกร้า ======================================================
   const Cart = () => {
-    return (
-      <div className="wrap-cart">
-        <div className="cart-name">
-          <img src="/src/img/เค้ก.jpg" alt="name" />
-          <p>Thai tea ice cream</p>
+    return listCarts.map((item, index) => {
+      return (
+        <div key={index} className="wrap-cart">
+          <div className="cart-name">
+            <img src={item.img} alt={item.name} />
+            <p>{item.name}</p>
+          </div>
+          <div className="price">
+            <p>{item.price} ฿</p>
+          </div>
+          <div className="add-item">
+            <i
+              className="fa-solid fa-plus"
+              onClick={() => {
+                const cardID = listCarts.findIndex((listCart) => {
+                  return listCart.id === item.id;
+                });
+                const prevlistCarts = listCarts[cardID];
+                const newItem = { ...item, total: prevlistCarts.total + 1 };
+                const newlistCarts = [...listCarts];
+                newlistCarts.splice(cardID, 1, newItem);
+                setListCarts(newlistCarts);
+              }}
+            ></i>
+            <p>{item.total}</p>
+            <i
+              className="fa-solid fa-minus"
+              onClick={() => {
+                const cardID = listCarts.findIndex((listCart) => {
+                  return listCart.id === item.id;
+                });
+                const prevlistCarts = listCarts[cardID];
+                if (prevlistCarts.total > 1) {
+                  const newItem = { ...item, total: prevlistCarts.total - 1 };
+                  const newlistCarts = [...listCarts];
+                  newlistCarts.splice(cardID, 1, newItem);
+                  setListCarts(newlistCarts);
+                } else {
+                  const newlistCarts = [...listCarts];
+                  newlistCarts.splice(cardID, 1);
+                  setListCarts(newlistCarts);
+                }
+              }}
+            ></i>
+          </div>
         </div>
-        <div className="price">
-          <p>60 ฿</p>
-        </div>
-        <div className="add-item">
-          <i className="fa-solid fa-plus"></i>
-          <p>1</p>
-          <i className="fa-solid fa-minus"></i>
-        </div>
-      </div>
-    );
+      );
+    });
   };
+
   // แสดง Dialog ======================================================
   const Dialog = () => {
     return (
@@ -87,11 +140,16 @@ function App() {
           </div>
           <div className="dialog-check">
             <div className="dialog-check-list">
-              <div className="dialog-cart">
-                <img src="/src/img/เค้ก.jpg" alt="name" />
-                <p>Thai tea ice cream</p>
-                <p>60 ฿</p>
-              </div>
+              {listCarts.map((item, index) => {
+                return (
+                  <div key={index} className="dialog-cart">
+                    <img src={item.img} alt={item.name} />
+                    <p>{item.name}</p>
+                    <p>{item.price} ฿</p>
+                    <p>{item.total}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
           <div className="dialog-check-price">Total: 200 บาท</div>
@@ -249,7 +307,7 @@ function App() {
   };
 
   return (
-    <div>
+    <>
       <div className="navbar">
         <img
           src="/src/img/LOGO.jpg"
@@ -290,7 +348,7 @@ function App() {
       <div className="footer">
         <p>Developer By HamHarry</p>
       </div>
-    </div>
+    </>
   );
 }
 

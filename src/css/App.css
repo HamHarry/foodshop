@@ -42,13 +42,13 @@
   grid-template-columns: 1fr 1fr 1fr;
 }
 .stock {
-  position: absolute;
   display: flex;
   width: 425px;
-  height: 200px;
   justify-content: end;
   font-size: 20px;
   font-weight: bold;
+  height: 2px;
+  margin-top: 5px;
 }
 .background-stock {
   display: flex;
@@ -79,7 +79,7 @@
 }
 .card img {
   width: 250px;
-  height: 130px;
+  height: 150px;
   border-radius: 20px;
 }
 .card-text {

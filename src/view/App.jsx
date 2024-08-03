@@ -15,6 +15,7 @@ function App() {
   const [searchValue, setSearchValue] = useState("");
   const [open, setOpen] = useState(false);
   const [listCarts, setListCarts] = useState([]);
+  const [price, setPrice] = useState(0);
 
   // แสดงข้อมูลสินค้า ======================================================
   const WrapListCard = () => {
@@ -27,26 +28,21 @@ function App() {
               key={index}
               className="card"
               onClick={() => {
-                // คลิ๊กแล้วให้สินค้าเข้ามา ถ้ามีสินค้าอยู่แล้วให้ total อัพเดท แต่ถ้ายังไม่มีให้เพิ่มสินค้าใหม่
-                // stock = 0 ไม่สามารถกดได้
                 if (item.stock === 0) return;
-                // เช็คสินค้าว่ามีอยู่ในตระกร้าไหม
-                const cardIndex = listCarts.findIndex((listCart) => {
+                const listCartIndex = listCarts.findIndex((listCart) => {
                   return listCart.id === item.id;
                 });
-                // ถ้ามีสินค้าให้อัพเดท total
-                if (cardIndex > -1) {
-                  const prevlistCarts = listCarts[cardIndex];
-                  // stock มีเท่าไหร่ให้กดได้เท่านั้น
-                  if (item.stock <= prevlistCarts.total) return;
-                  // เพิ่ม total ใน object แล้วเอาชุดเก่ามาบวก
-                  const newItem = {
-                    ...item,
-                    total: prevlistCarts.total + 1,
-                  };
+                if (listCartIndex > -1) {
+                  const prevlistCarts = listCarts[listCartIndex];
+                  if (prevlistCarts.total >= item.stock) return;
+                  const newItem = { ...item, total: prevlistCarts.total + 1 };
                   const newlistCarts = [...listCarts];
-                  newlistCarts.splice(cardIndex, 1, newItem);
+                  newlistCarts.splice(listCartIndex, 1, newItem);
                   setListCarts(newlistCarts);
+                  const result = newlistCarts.reduce((prev, item) => {
+                    return prev + item.price * item.total;
+                  }, 0);
+                  setPrice(result);
                 } else {
                   const newItem = { ...item, total: 1 };
                   const newlistCarts = [...listCarts, newItem];
@@ -98,39 +94,9 @@ function App() {
             <p>{item.price} ฿</p>
           </div>
           <div className="add-item">
-            <i
-              className="fa-solid fa-plus"
-              onClick={() => {
-                const cardID = listCarts.findIndex((listCart) => {
-                  return listCart.id === item.id;
-                });
-                const prevlistCarts = listCarts[cardID];
-                const newItem = { ...item, total: prevlistCarts.total + 1 };
-                const newlistCarts = [...listCarts];
-                newlistCarts.splice(cardID, 1, newItem);
-                setListCarts(newlistCarts);
-              }}
-            ></i>
+            <i className="fa-solid fa-plus"></i>
             <p>{item.total}</p>
-            <i
-              className="fa-solid fa-minus"
-              onClick={() => {
-                const cardID = listCarts.findIndex((listCart) => {
-                  return listCart.id === item.id;
-                });
-                const prevlistCarts = listCarts[cardID];
-                if (prevlistCarts.total > 1) {
-                  const newItem = { ...item, total: prevlistCarts.total - 1 };
-                  const newlistCarts = [...listCarts];
-                  newlistCarts.splice(cardID, 1, newItem);
-                  setListCarts(newlistCarts);
-                } else {
-                  const newlistCarts = [...listCarts];
-                  newlistCarts.splice(cardID, 1);
-                  setListCarts(newlistCarts);
-                }
-              }}
-            ></i>
+            <i className="fa-solid fa-minus"></i>
           </div>
         </div>
       );
@@ -319,6 +285,7 @@ function App() {
     setSearchValue(value);
   };
 
+  // fucntion price to string =====================================================
   return (
     <>
       <div className="navbar">
@@ -349,9 +316,9 @@ function App() {
           <div className="cart">{Cart()}</div>
           <div className="payment">
             <div className="payment-text">
-              <p>Price: 100 ฿</p>
-              <p>VAT 7 %: 7 ฿</p>
-              <p>TOTAL: 107 ฿</p>
+              <p>Price: {price} ฿</p>
+              <p>VAT 7 %: ฿</p>
+              <p>TOTAL: ฿</p>
             </div>
             <i className="fa-solid fa-circle-check"></i>
           </div>

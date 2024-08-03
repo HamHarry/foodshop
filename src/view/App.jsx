@@ -28,17 +28,23 @@ function App() {
               className="card"
               onClick={() => {
                 // คลิ๊กแล้วให้สินค้าเข้ามา ถ้ามีสินค้าอยู่แล้วให้ total อัพเดท แต่ถ้ายังไม่มีให้เพิ่มสินค้าใหม่
-                const cardID = listCarts.findIndex((listCart) => {
+                // stock = 0 ไม่สามารถกดได้
+                if (item.stock === 0) return;
+                // เช็คสินค้าว่ามีอยู่ในตระกร้าไหม
+                const cardIndex = listCarts.findIndex((listCart) => {
                   return listCart.id === item.id;
                 });
-                if (cardID > -1) {
-                  const prevlistCarts = listCarts[cardID];
+                // ถ้ามีสินค้าให้อัพเดท total
+                if (cardIndex > -1) {
+                  const prevlistCarts = listCarts[cardIndex];
+                  // stock มีเท่าไหร่ให้กดได้เท่านั้น
+                  if (item.stock <= prevlistCarts.total) return;
                   const newItem = {
                     ...item,
                     total: prevlistCarts.total + 1,
                   };
                   const newlistCarts = [...listCarts];
-                  newlistCarts.splice(cardID, 1, newItem);
+                  newlistCarts.splice(cardIndex, 1, newItem);
                   setListCarts(newlistCarts);
                 } else {
                   const newItem = { ...item, total: 1 };

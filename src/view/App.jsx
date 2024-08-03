@@ -39,6 +39,7 @@ function App() {
                   const prevlistCarts = listCarts[cardIndex];
                   // stock มีเท่าไหร่ให้กดได้เท่านั้น
                   if (item.stock <= prevlistCarts.total) return;
+                  // เพิ่ม total ใน object แล้วเอาชุดเก่ามาบวก
                   const newItem = {
                     ...item,
                     total: prevlistCarts.total + 1,

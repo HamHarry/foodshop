@@ -226,7 +226,7 @@ function App() {
               })}
             </div>
           </div>
-          <div className="dialog-check-price">Total: {summary} บาท</div>
+          <div className="dialog-check-price">Total: {summary} ฿</div>
           <div className="btn-dialog-pay">
             <i className="fa-solid fa-money-bill-1"></i>
           </div>

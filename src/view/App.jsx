@@ -16,6 +16,8 @@ function App() {
   const [open, setOpen] = useState(false);
   const [listCarts, setListCarts] = useState([]);
   const [price, setPrice] = useState(0);
+  const [vat, setVat] = useState(0);
+  const [summary, setSummary] = useState(0);
 
   // แสดงข้อมูลสินค้า ======================================================
   const WrapListCard = () => {
@@ -32,22 +34,35 @@ function App() {
                 const listCartIndex = listCarts.findIndex((listCart) => {
                   return listCart.id === item.id;
                 });
+                let newlistCarts = [];
                 if (listCartIndex > -1) {
                   const prevlistCarts = listCarts[listCartIndex];
                   if (prevlistCarts.total >= item.stock) return;
                   const newItem = { ...item, total: prevlistCarts.total + 1 };
-                  const newlistCarts = [...listCarts];
+                  newlistCarts = [...listCarts];
                   newlistCarts.splice(listCartIndex, 1, newItem);
                   setListCarts(newlistCarts);
-                  const result = newlistCarts.reduce((prev, item) => {
-                    return prev + item.price * item.total;
-                  }, 0);
-                  setPrice(result);
                 } else {
                   const newItem = { ...item, total: 1 };
-                  const newlistCarts = [...listCarts, newItem];
+                  newlistCarts = [...listCarts, newItem];
                   setListCarts(newlistCarts);
                 }
+                const result = newlistCarts.reduce((prev, item) => {
+                  return prev + item.price * item.total;
+                }, 0);
+                setPrice(result);
+                const resultVat = newlistCarts.reduce((prev, item) => {
+                  return prev + (item.price * item.total * 7) / 100;
+                }, 0);
+                setVat(Math.floor(resultVat));
+                const resultSum = newlistCarts.reduce((prev, item) => {
+                  return (
+                    prev +
+                    item.price * item.total +
+                    (item.price * item.total * 7) / 100
+                  );
+                }, 0);
+                setSummary(Math.floor(resultSum));
               }}
             >
               <div className="stock">
@@ -94,9 +109,88 @@ function App() {
             <p>{item.price} ฿</p>
           </div>
           <div className="add-item">
-            <i className="fa-solid fa-plus"></i>
+            <i
+              className="fa-solid fa-plus"
+              onClick={() => {
+                const listCartIndex = listCarts.findIndex((listCart) => {
+                  return listCart.id === item.id;
+                });
+                const prevlistCarts = listCarts[listCartIndex];
+                let newlistCarts = [];
+                const newItem = { ...item, total: prevlistCarts.total + 1 };
+                newlistCarts = [...listCarts];
+                newlistCarts.splice(listCartIndex, 1, newItem);
+                setListCarts(newlistCarts);
+                const result = newlistCarts.reduce((prev, item) => {
+                  return prev + item.price * item.total;
+                }, 0);
+                setPrice(result);
+                const resultVat = newlistCarts.reduce((prev, item) => {
+                  return prev + (item.price * item.total * 7) / 100;
+                }, 0);
+                setVat(Math.floor(resultVat));
+                const resultSum = newlistCarts.reduce((prev, item) => {
+                  return (
+                    prev +
+                    item.price * item.total +
+                    (item.price * item.total * 7) / 100
+                  );
+                }, 0);
+                setSummary(Math.floor(resultSum));
+              }}
+            ></i>
             <p>{item.total}</p>
-            <i className="fa-solid fa-minus"></i>
+            <i
+              className="fa-solid fa-minus"
+              onClick={() => {
+                const listCartIndex = listCarts.findIndex((listCart) => {
+                  return listCart.id === item.id;
+                });
+                const prevlistCarts = listCarts[listCartIndex];
+                if (prevlistCarts.total > 1) {
+                  const newItem = { ...item, total: prevlistCarts.total - 1 };
+                  const newlistCarts = [...listCarts];
+                  newlistCarts.splice(listCartIndex, 1, newItem);
+                  setListCarts(newlistCarts);
+                  const result = newlistCarts.reduce((prev, item) => {
+                    return prev + item.price * item.total;
+                  }, 0);
+                  setPrice(result);
+                  const resultVat = newlistCarts.reduce((prev, item) => {
+                    return prev + (item.price * item.total * 7) / 100;
+                  }, 0);
+                  setVat(Math.floor(resultVat));
+                  const resultSum = newlistCarts.reduce((prev, item) => {
+                    return (
+                      prev +
+                      item.price * item.total +
+                      (item.price * item.total * 7) / 100
+                    );
+                  }, 0);
+                  setSummary(Math.floor(resultSum));
+                } else {
+                  const newlistCarts = [...listCarts];
+                  newlistCarts.splice(listCartIndex, 1);
+                  setListCarts(newlistCarts);
+                  const result = newlistCarts.reduce((prev, item) => {
+                    return prev + item.price * item.total;
+                  }, 0);
+                  setPrice(result);
+                  const resultVat = newlistCarts.reduce((prev, item) => {
+                    return prev + (item.price * item.total * 7) / 100;
+                  }, 0);
+                  setVat(Math.floor(resultVat));
+                  const resultSum = newlistCarts.reduce((prev, item) => {
+                    return (
+                      prev +
+                      item.price * item.total +
+                      (item.price * item.total * 7) / 100
+                    );
+                  }, 0);
+                  setSummary(Math.floor(resultSum));
+                }
+              }}
+            ></i>
           </div>
         </div>
       );
@@ -131,7 +225,7 @@ function App() {
               })}
             </div>
           </div>
-          <div className="dialog-check-price">Total: 200 บาท</div>
+          <div className="dialog-check-price">Total: {summary} บาท</div>
           <div className="btn-dialog-pay">
             <i className="fa-solid fa-money-bill-1"></i>
           </div>
@@ -285,7 +379,7 @@ function App() {
     setSearchValue(value);
   };
 
-  // fucntion price to string =====================================================
+  // fucntion price =====================================================
   return (
     <>
       <div className="navbar">
@@ -317,8 +411,8 @@ function App() {
           <div className="payment">
             <div className="payment-text">
               <p>Price: {price} ฿</p>
-              <p>VAT 7 %: ฿</p>
-              <p>TOTAL: ฿</p>
+              <p>VAT 7 %: {vat} ฿</p>
+              <p>TOTAL: {summary} ฿</p>
             </div>
             <i className="fa-solid fa-circle-check"></i>
           </div>

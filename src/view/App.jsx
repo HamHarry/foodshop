@@ -112,10 +112,13 @@ function App() {
             <i
               className="fa-solid fa-plus"
               onClick={() => {
+                if (item.stock === 0) return;
                 const listCartIndex = listCarts.findIndex((listCart) => {
                   return listCart.id === item.id;
                 });
                 const prevlistCarts = listCarts[listCartIndex];
+                if (prevlistCarts.total + 1 > prevlistCarts.stock) return;
+                console.log(prevlistCarts.total, prevlistCarts.stock);
                 let newlistCarts = [];
                 const newItem = { ...item, total: prevlistCarts.total + 1 };
                 newlistCarts = [...listCarts];

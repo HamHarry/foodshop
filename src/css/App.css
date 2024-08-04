@@ -50,11 +50,20 @@
   height: 2px;
   margin-top: 5px;
 }
-.background-stock {
+.background-in-stock {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #57bdf6;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+.background-out-of-stock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
   height: 35px;
   width: 35px;
   border-radius: 50%;

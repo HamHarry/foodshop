@@ -24,7 +24,7 @@ function App() {
     return (
       <div className="wrap-list-card">
         {list.map((item, index) => {
-          const { name, price, img, score } = item;
+          const { name, price, img, score, stock } = item;
           return (
             <div
               key={index}
@@ -66,7 +66,15 @@ function App() {
               }}
             >
               <div className="stock">
-                <div className="background-stock">{item.stock}</div>
+                <div
+                  className={
+                    stock === 0
+                      ? "background-out-of-stock"
+                      : "background-in-stock"
+                  }
+                >
+                  {stock}
+                </div>
               </div>
               <img src={img} alt={name} />
               <div className="card-text">

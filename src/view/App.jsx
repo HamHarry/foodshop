@@ -116,6 +116,7 @@ function App() {
                   return listCart.id === item.id;
                 });
                 const prevlistCarts = listCarts[listCartIndex];
+                if (prevlistCarts.total + 1 > prevlistCarts.stock) return;
                 let newlistCarts = [];
                 const newItem = { ...item, total: prevlistCarts.total + 1 };
                 newlistCarts = [...listCarts];

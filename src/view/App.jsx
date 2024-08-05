@@ -412,7 +412,7 @@ function App() {
           }}
         />
         <div className="shop">
-          <div className="shop-total">
+          <div className={total === 1 ? "shop-total" : "shop-total-none"}>
             <p>{total}</p>
           </div>
           <i

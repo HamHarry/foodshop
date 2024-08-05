@@ -27,6 +27,9 @@
   justify-content: center;
   align-items: center;
 }
+.shop-total-none {
+  display: none;
+}
 .fa-basket-shopping {
   font-size: 50px;
   display: flex;

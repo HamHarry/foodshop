@@ -186,6 +186,10 @@ function App() {
                     );
                   }, 0);
                   setSummary(Math.floor(resultSum));
+                  const resultTotal = newlistCarts.reduce((prev, item) => {
+                    return prev + item.total;
+                  }, 0);
+                  setTotal(resultTotal);
                 } else {
                   const newlistCarts = [...listCarts];
                   newlistCarts.splice(listCartIndex, 1);
@@ -412,7 +416,7 @@ function App() {
           }}
         />
         <div className="shop">
-          <div className={total === 1 ? "shop-total" : "shop-total-none"}>
+          <div className={total > 0 ? "shop-total" : "shop-total-none"}>
             <p>{total}</p>
           </div>
           <i

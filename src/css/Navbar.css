@@ -13,7 +13,21 @@
   margin-left: 10px;
   cursor: pointer;
 }
-.navbar .fa-basket-shopping {
+.shop {
+  position: relative;
+}
+.shop-total {
+  position: absolute;
+  right: 10px;
+  height: 25px;
+  width: 25px;
+  background-color: red;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fa-basket-shopping {
   font-size: 50px;
   display: flex;
   justify-content: center;
@@ -32,7 +46,7 @@
     width: 100px;
     height: 100px;
   }
-  .navbar .fa-basket-shopping {
+  .fa-basket-shopping {
     font-size: 90px;
   }
 }
@@ -49,7 +63,7 @@
     width: 70px;
     height: 70px;
   }
-  .navbar .fa-basket-shopping {
+  .fa-basket-shopping {
     font-size: 70px;
   }
 }

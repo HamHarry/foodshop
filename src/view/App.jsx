@@ -18,6 +18,7 @@ function App() {
   const [price, setPrice] = useState(0);
   const [vat, setVat] = useState(0);
   const [summary, setSummary] = useState(0);
+  const [total, setTotal] = useState(0);
 
   // แสดงข้อมูลสินค้า ======================================================
   const WrapListCard = () => {
@@ -63,6 +64,10 @@ function App() {
                   );
                 }, 0);
                 setSummary(Math.floor(resultSum));
+                const resultTotal = newlistCarts.reduce((prev, item) => {
+                  return prev + item.total;
+                }, 0);
+                setTotal(resultTotal);
               }}
             >
               <div className="stock">
@@ -146,6 +151,10 @@ function App() {
                   );
                 }, 0);
                 setSummary(Math.floor(resultSum));
+                const resultTotal = newlistCarts.reduce((prev, item) => {
+                  return prev + item.total;
+                }, 0);
+                setTotal(resultTotal);
               }}
             ></i>
             <p>{item.total}</p>
@@ -197,6 +206,10 @@ function App() {
                     );
                   }, 0);
                   setSummary(Math.floor(resultSum));
+                  const resultTotal = newlistCarts.reduce((prev, item) => {
+                    return prev + item.total;
+                  }, 0);
+                  setTotal(resultTotal);
                 }
               }}
             ></i>
@@ -388,7 +401,6 @@ function App() {
     setSearchValue(value);
   };
 
-  // fucntion price =====================================================
   return (
     <>
       <div className="navbar">
@@ -399,12 +411,17 @@ function App() {
             return window.location.reload(false);
           }}
         />
-        <i
-          className="fa-solid fa-basket-shopping"
-          onClick={() => {
-            setOpen(!open);
-          }}
-        ></i>
+        <div className="shop">
+          <div className="shop-total">
+            <p>{total}</p>
+          </div>
+          <i
+            className="fa-solid fa-basket-shopping"
+            onClick={() => {
+              setOpen(!open);
+            }}
+          ></i>
+        </div>
       </div>
       <div className="container">
         <div className="list-card">

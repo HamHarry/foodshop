@@ -33,7 +33,7 @@ function App() {
               onClick={() => {
                 if (item.stock === 0) return;
                 const listCartIndex = listCarts.findIndex((listCart) => {
-                  return listCart.id === item.id;
+                  listCart.name === item.name;
                 });
                 let newlistCarts = [];
                 if (listCartIndex > -1) {
@@ -55,7 +55,7 @@ function App() {
                 const resultVat = newlistCarts.reduce((prev, item) => {
                   return prev + (item.price * item.total * 7) / 100;
                 }, 0);
-                setVat(Math.floor(resultVat));
+                setVat(Math.round(resultVat));
                 const resultSum = newlistCarts.reduce((prev, item) => {
                   return (
                     prev +
@@ -63,7 +63,7 @@ function App() {
                     (item.price * item.total * 7) / 100
                   );
                 }, 0);
-                setSummary(Math.floor(resultSum));
+                setSummary(Math.round(resultSum));
                 const resultTotal = newlistCarts.reduce((prev, item) => {
                   return prev + item.total;
                 }, 0);
@@ -126,7 +126,7 @@ function App() {
               className="fa-solid fa-plus"
               onClick={() => {
                 const listCartIndex = listCarts.findIndex((listCart) => {
-                  return listCart.id === item.id;
+                  listCart.name === item.name;
                 });
                 const prevlistCarts = listCarts[listCartIndex];
                 if (prevlistCarts.total + 1 > prevlistCarts.stock) return;
@@ -142,7 +142,7 @@ function App() {
                 const resultVat = newlistCarts.reduce((prev, item) => {
                   return prev + (item.price * item.total * 7) / 100;
                 }, 0);
-                setVat(Math.floor(resultVat));
+                setVat(Math.round(resultVat));
                 const resultSum = newlistCarts.reduce((prev, item) => {
                   return (
                     prev +
@@ -150,7 +150,7 @@ function App() {
                     (item.price * item.total * 7) / 100
                   );
                 }, 0);
-                setSummary(Math.floor(resultSum));
+                setSummary(Math.round(resultSum));
                 const resultTotal = newlistCarts.reduce((prev, item) => {
                   return prev + item.total;
                 }, 0);
@@ -162,7 +162,7 @@ function App() {
               className="fa-solid fa-minus"
               onClick={() => {
                 const listCartIndex = listCarts.findIndex((listCart) => {
-                  return listCart.id === item.id;
+                  listCart.name === item.name;
                 });
                 const prevlistCarts = listCarts[listCartIndex];
                 if (prevlistCarts.total > 1) {
@@ -177,7 +177,7 @@ function App() {
                   const resultVat = newlistCarts.reduce((prev, item) => {
                     return prev + (item.price * item.total * 7) / 100;
                   }, 0);
-                  setVat(Math.floor(resultVat));
+                  setVat(Math.round(resultVat));
                   const resultSum = newlistCarts.reduce((prev, item) => {
                     return (
                       prev +
@@ -185,7 +185,7 @@ function App() {
                       (item.price * item.total * 7) / 100
                     );
                   }, 0);
-                  setSummary(Math.floor(resultSum));
+                  setSummary(Math.round(resultSum));
                   const resultTotal = newlistCarts.reduce((prev, item) => {
                     return prev + item.total;
                   }, 0);
@@ -201,7 +201,7 @@ function App() {
                   const resultVat = newlistCarts.reduce((prev, item) => {
                     return prev + (item.price * item.total * 7) / 100;
                   }, 0);
-                  setVat(Math.floor(resultVat));
+                  setVat(Math.round(resultVat));
                   const resultSum = newlistCarts.reduce((prev, item) => {
                     return (
                       prev +
@@ -209,7 +209,7 @@ function App() {
                       (item.price * item.total * 7) / 100
                     );
                   }, 0);
-                  setSummary(Math.floor(resultSum));
+                  setSummary(Math.round(resultSum));
                   const resultTotal = newlistCarts.reduce((prev, item) => {
                     return prev + item.total;
                   }, 0);
@@ -442,7 +442,7 @@ function App() {
             <div className="payment-text">
               <p>Price: {price} ฿</p>
               <p>VAT 7 %: {vat} ฿</p>
-              <p>TOTAL: {summary} ฿</p>
+              <p>Total: {summary} ฿</p>
             </div>
             <i className="fa-solid fa-circle-check"></i>
           </div>

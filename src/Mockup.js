@@ -1,6 +1,5 @@
 const mockup = [
   {
-    id: 1,
     stock: 5,
     type: "food",
     name: "Pad Thai",
@@ -9,7 +8,6 @@ const mockup = [
     img: "/src/img/ผัดไท.png",
   },
   {
-    id: 2,
     stock: 10,
     type: "food",
     name: "Fried rice with pork",
@@ -18,7 +16,6 @@ const mockup = [
     img: "/src/img/ข้าวผัดหมู.jpg",
   },
   {
-    id: 3,
     stock: 6,
     type: "food",
     name: "Fried rice with crab",
@@ -27,7 +24,6 @@ const mockup = [
     img: "/src/img/ข้าวผัดปู.jpg",
   },
   {
-    id: 4,
     stock: 9,
     type: "food",
     name: "Fried rice with squid",
@@ -36,7 +32,6 @@ const mockup = [
     img: "/src/img/กระเพรา.png",
   },
   {
-    id: 5,
     stock: 7,
     type: "food",
     name: "Tom Yum Kung",
@@ -45,7 +40,6 @@ const mockup = [
     img: "/src/img/ต้มยำกุ้ง.jpg",
   },
   {
-    id: 6,
     stock: 0,
     type: "food",
     name: "Chicken and galangal soup",
@@ -54,7 +48,6 @@ const mockup = [
     img: "/src/img/ต้มข่าไก่.jpg",
   },
   {
-    id: 7,
     stock: 7,
     type: "food",
     name: "Chicken Green Curry",
@@ -63,7 +56,6 @@ const mockup = [
     img: "/src/img/แกงเขียวหวานไก่.jpg",
   },
   {
-    id: 8,
     stock: 2,
     type: "food",
     name: "Roast chicken",
@@ -72,7 +64,6 @@ const mockup = [
     img: "/src/img/ไก่ย่าง.jpg",
   },
   {
-    id: 9,
     stock: 0,
     type: "food",
     name: "Papaya salad",
@@ -81,7 +72,6 @@ const mockup = [
     img: "/src/img/ส้มตำ.jpg",
   },
   {
-    id: 10,
     stock: 2,
     type: "food",
     name: "Charcoal pork",
@@ -90,16 +80,46 @@ const mockup = [
     img: "/src/img/คอหมูย่าง.jpeg",
   },
   {
-    id: 11,
+    stock: 2,
+    type: "food",
+    name: "Charcoal pork",
+    score: 4,
+    price: 65,
+    img: "/src/img/คอหมูย่าง.jpeg",
+  },
+  {
+    stock: 10,
+    type: "food",
+    name: "Rice",
+    score: 5,
+    price: 10,
+    img: "/src/img/ข้าว.jpg",
+  },
+  {
+    stock: 10,
+    type: "food",
+    name: "Sticky Rice",
+    score: 4,
+    price: 10,
+    img: "/src/img/ข้าวเหนียว.jpg",
+  },
+  {
+    stock: 10,
+    type: "drink",
+    name: "Water",
+    score: 3,
+    price: 10,
+    img: "/src/img/น้ำ.jpg",
+  },
+  {
     stock: 5,
     type: "drink",
     name: "Lemon Tea",
-    score: 3,
+    score: 4,
     price: 40,
     img: "/src/img/ชามะนาว.png",
   },
   {
-    id: 12,
     stock: 5,
     type: "drink",
     name: "Milk Tea",
@@ -108,7 +128,6 @@ const mockup = [
     img: "/src/img/ชานม.jpg",
   },
   {
-    id: 13,
     stock: 12,
     type: "drink",
     name: "Coke",
@@ -117,7 +136,6 @@ const mockup = [
     img: "/src/img/Coke.jpg",
   },
   {
-    id: 14,
     stock: 10,
     type: "drink",
     name: "Pepsi",
@@ -126,7 +144,6 @@ const mockup = [
     img: "/src/img/เป๊ปซี่.jpg",
   },
   {
-    id: 15,
     stock: 0,
     type: "drink",
     name: "Coffee Latte",
@@ -135,7 +152,6 @@ const mockup = [
     img: "/src/img/ลาเต้.jpg",
   },
   {
-    id: 16,
     stock: 4,
     type: "dessert",
     name: "Thai tea ice cream",
@@ -144,7 +160,6 @@ const mockup = [
     img: "/src/img/Thai tea ice cream.jpg",
   },
   {
-    id: 17,
     stock: 8,
     type: "dessert",
     name: "Mango sticky rice",
@@ -153,7 +168,6 @@ const mockup = [
     img: "/src/img/มะม่วง.jpg",
   },
   {
-    id: 18,
     stock: 0,
     type: "dessert",
     name: "Pudding",
@@ -162,7 +176,6 @@ const mockup = [
     img: "/src/img/caramel-castard-taco-bell.jpg",
   },
   {
-    id: 19,
     stock: 9,
     type: "dessert",
     name: "Crepe",
@@ -171,7 +184,6 @@ const mockup = [
     img: "/src/img/Crepe.jpg",
   },
   {
-    id: 20,
     stock: 0,
     type: "dessert",
     name: "Layer Cake",
@@ -180,7 +192,6 @@ const mockup = [
     img: "/src/img/Layer Cake.jpeg",
   },
   {
-    id: 21,
     stock: 5,
     type: "dessert",
     name: "Fresh Fruit",

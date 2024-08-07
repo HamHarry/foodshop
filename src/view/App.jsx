@@ -33,7 +33,7 @@ function App() {
               onClick={() => {
                 if (item.stock === 0) return;
                 const listCartIndex = listCarts.findIndex((listCart) => {
-                  listCart.name === item.name;
+                  return listCart.name === item.name;
                 });
                 let newlistCarts = [];
                 if (listCartIndex > -1) {
@@ -126,7 +126,7 @@ function App() {
               className="fa-solid fa-plus"
               onClick={() => {
                 const listCartIndex = listCarts.findIndex((listCart) => {
-                  listCart.name === item.name;
+                  return listCart.name === item.name;
                 });
                 const prevlistCarts = listCarts[listCartIndex];
                 if (prevlistCarts.total + 1 > prevlistCarts.stock) return;
@@ -162,7 +162,7 @@ function App() {
               className="fa-solid fa-minus"
               onClick={() => {
                 const listCartIndex = listCarts.findIndex((listCart) => {
-                  listCart.name === item.name;
+                  return listCart.name === item.name;
                 });
                 const prevlistCarts = listCarts[listCartIndex];
                 if (prevlistCarts.total > 1) {

@@ -251,7 +251,9 @@ function App() {
               })}
             </div>
           </div>
-          <div className="dialog-check-price">Total: {summary} ฿</div>
+          <div className="dialog-check-price">
+            Total: {Intl.NumberFormat().format(summary)} ฿
+          </div>
           <div className="btn-dialog-pay">
             <i className="fa-solid fa-money-bill-1"></i>
           </div>
@@ -440,9 +442,9 @@ function App() {
           <div className="cart">{Cart()}</div>
           <div className="payment">
             <div className="payment-text">
-              <p>Price: {price} ฿</p>
+              <p>Price: {Intl.NumberFormat().format(price)} ฿</p>
               <p>VAT 7 %: {vat} ฿</p>
-              <p>Total: {summary} ฿</p>
+              <p>Total: {Intl.NumberFormat().format(summary)} ฿</p>
             </div>
             <i className="fa-solid fa-circle-check"></i>
           </div>

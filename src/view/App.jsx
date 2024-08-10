@@ -19,6 +19,7 @@ function App() {
   const [vat, setVat] = useState(0);
   const [summary, setSummary] = useState(0);
   const [total, setTotal] = useState(0);
+  const [payValue, setPayValue] = useState(0);
 
   // แสดงข้อมูลสินค้า ======================================================
   const WrapListCard = () => {
@@ -257,9 +258,24 @@ function App() {
           <div className="btn-dialog-pay">
             <div className="pay">
               <p>ชำระเงิน</p>
-              <input type="text" placeholder="กรอกจำนวนเงิน" />
+              <input
+                type="number"
+                placeholder="กรอกจำนวนเงิน"
+                onChange={handleChangePirce}
+              />
             </div>
-            <i className="fa-solid fa-money-bill-1"></i>
+            <i
+              className="fa-solid fa-money-bill-1"
+              onClick={() => {
+                const result = payValue - summary;
+                if (result >= 0) {
+                  alert("ชำระเงินสำเร็จ เงินทอนของคุณ: " + result + " ฿");
+                  setOpen(!open);
+                } else {
+                  alert("จำนวนเงินของคุณไม่เพียงพอ กรุณาชำระใหม่อีกครั้ง");
+                }
+              }}
+            ></i>
           </div>
         </div>
       </dialog>
@@ -350,7 +366,11 @@ function App() {
     return (
       <div className="searchbar">
         <i className="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder="Search..." onChange={handleChange} />
+        <input
+          type="text"
+          placeholder="Search..."
+          onChange={handleChangeSearch}
+        />
       </div>
     );
   };
@@ -398,7 +418,7 @@ function App() {
   };
 
   // fucntion Seach =====================================================
-  const handleChange = (e) => {
+  const handleChangeSearch = (e) => {
     const value = e.target.value.toLowerCase();
     const newlist = listRef.filter((item) => {
       const searchname = item.name.toLowerCase().includes(value);
@@ -409,6 +429,10 @@ function App() {
     });
     setList(newlist);
     setSearchValue(value);
+  };
+  const handleChangePirce = (e) => {
+    const pay = e.target.value;
+    setPayValue(pay);
   };
 
   return (

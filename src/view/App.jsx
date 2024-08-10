@@ -255,6 +255,10 @@ function App() {
             Total: {Intl.NumberFormat().format(summary)} ฿
           </div>
           <div className="btn-dialog-pay">
+            <div className="pay">
+              <p>ชำระเงิน</p>
+              <input type="text" placeholder="กรอกจำนวนเงิน" />
+            </div>
             <i className="fa-solid fa-money-bill-1"></i>
           </div>
         </div>
@@ -446,7 +450,6 @@ function App() {
               <p>VAT 7 %: {vat} ฿</p>
               <p>Total: {Intl.NumberFormat().format(summary)} ฿</p>
             </div>
-            <i className="fa-solid fa-circle-check"></i>
           </div>
         </div>
       </div>

@@ -271,6 +271,11 @@ function App() {
                 if (result >= 0) {
                   alert("ชำระเงินสำเร็จ เงินทอนของคุณ: " + result + " ฿");
                   setOpen(!open);
+                  setListCarts([]);
+                  setPrice(0);
+                  setVat(0);
+                  setSummary(0);
+                  setTotal(0);
                 } else {
                   alert("จำนวนเงินของคุณไม่เพียงพอ กรุณาชำระใหม่อีกครั้ง");
                 }

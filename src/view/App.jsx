@@ -271,11 +271,8 @@ function App() {
                 if (result >= 0) {
                   alert("ชำระเงินสำเร็จ เงินทอนของคุณ: " + result + " ฿");
                   setOpen(!open);
-                  setListCarts([]);
-                  setPrice(0);
-                  setVat(0);
-                  setSummary(0);
-                  setTotal(0);
+                  reset();
+                  deleteStock();
                 } else {
                   alert("จำนวนเงินของคุณไม่เพียงพอ กรุณาชำระใหม่อีกครั้ง");
                 }
@@ -438,6 +435,28 @@ function App() {
   const handleChangePirce = (e) => {
     const pay = e.target.value;
     setPayValue(pay);
+  };
+
+  //reset
+  const reset = () => {
+    setListCarts([]);
+    setPrice(0);
+    setVat(0);
+    setSummary(0);
+    setTotal(0);
+  };
+
+  //deletestock
+  const deleteStock = () => {
+    const newlist = [...list];
+    listCarts.map((item) => {
+      const newlistIndex = newlist.findIndex((list) => {
+        return list.name === item.name;
+      });
+      const deletes = newlist[newlistIndex].stock - item.total;
+      newlist[newlistIndex].stock = deletes;
+    });
+    setList(newlist);
   };
 
   return (

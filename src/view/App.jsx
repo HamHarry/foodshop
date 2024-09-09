@@ -262,6 +262,7 @@ function App() {
                 type="number"
                 placeholder="กรอกจำนวนเงิน"
                 onChange={handleChangePirce}
+                value={payValue}
               />
             </div>
             <i
@@ -444,6 +445,7 @@ function App() {
     setVat(0);
     setSummary(0);
     setTotal(0);
+    setPayValue(0);
   };
 
   //deletestock

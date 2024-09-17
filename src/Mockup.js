@@ -5,7 +5,7 @@ const mockup = [
     name: "Pad Thai",
     score: 5,
     price: 60,
-    img: "/src/assets/img/ผัดไท.png",
+    img: "/assets/img/ผัดไท.png",
   },
   {
     stock: 10,

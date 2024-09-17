@@ -465,7 +465,7 @@ function App() {
     <>
       <div className="navbar">
         <img
-          src="/src/img/LOGO.jpg"
+          src="/assets/img/LOGO.jpg"
           alt="logo"
           onClick={() => {
             return window.location.reload(false);
